@@ -1,0 +1,215 @@
+// -------------------- global
+:root {
+  --dark: #19283f;
+  --green: #33d1cc;
+  --red: #ff3150;
+  --yellow: #ffc400;
+  --section-color: #eff7fa;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+a {
+  text-decoration: none;
+}
+// -------------------- framework
+.main-btn {
+  text-transform: capitalize;
+  background-color: var(--red);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: 1px solid var(--red);
+  &:hover {
+    background-color: transparent;
+    color: var(--red);
+    font-weight: bold;
+  }
+}
+.main-title:after {
+  content: "";
+  width: 120px;
+  height: 2px;
+  background-color: var(--green);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  // -------------------- navbar
+  .navbar {
+    text-transform: capitalize;
+    background-color: var(--dark);
+    .navbar-toggler {
+      color: #fff;
+      border-color: #fff;
+      &:focus {
+        box-shadow: none;
+      }
+      &[aria-expanded="true"] {
+        color: var(--green);
+        border-color: var(--green);
+      }
+    }
+    .nav-link {
+      color: #fff;
+      &.active,
+      &.focus,
+      &.hover {
+        color: var(--green);
+      }
+    }
+    .search {
+      border-left: 1px solid var(--green);
+      svg {
+        color: var(--green);
+      }
+    }
+  }
+  // -------------------- landing
+  .landing {
+    width: 100%;
+    height: calc(100vh - 72px);
+    background-color: var(--dark);
+    p {
+      text-transform: capitalize;
+    }
+  }
+  // -------------------- features
+  .features {
+    .icon-holder {
+      height: 200px;
+      svg {
+        left: 50%;
+        transform: translateX(-50%);
+        &.number {
+          font-size: 12rem;
+          color: var(--section-color);
+        }
+        &.icon {
+          color: var(--green);
+        }
+      }
+    }
+    h4 {
+      color: var(--yellow);
+    }
+  }
+  // -------------------- portfolio
+  .portfolio {
+    background-color: var(--section-color);
+    ul {
+      li {
+        padding: 0.5rem 1rem;
+        margin: 0 10px;
+        cursor: pointer;
+        &:hover {
+          color: var(--red);
+        }
+        &.active {
+          color: #fff;
+          background-color: var(--red);
+          border-radius: 50rem;
+        }
+      }
+    }
+    .box {
+      padding: 5px;
+      overflow: hidden;
+      position: relative;
+      &:before {
+        content: attr(data-portfolio);
+        text-transform: capitalize;
+        position: absolute;
+        background-color: rgba(25, 40, 63, 0.86);
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.5rem;
+        transition: 0.35s;
+        opacity: 0;
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+    }
+  }
+  // -------------------- stuff
+  .stuff {
+    .container {
+      & > p {
+        max-width: 500px;
+      }
+    }
+  }
+  // -------------------- team
+  .team {
+    background-color: var(--section-color);
+    h2 {
+      color: var(--dark);
+    }
+    .box {
+      h4 {
+        background-color: var(--dark);
+      }
+    }
+  }
+  // -------------------- techs
+  // -------------------- project
+  .project {
+    background-color: var(--dark);
+  }
+  // -------------------- blog
+  // -------------------- subscribe
+  .subscribe {
+    background-color: var(--red);
+    input[type="text"] {
+      border: none;
+      border-bottom: 1px solid #fff;
+      background-color: transparent;
+      caret-color: #fff;
+      &::placeholder {
+        color: #fff;
+        text-transform: capitalize;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .main-btn {
+      border-radius: 0 !important;
+      border-color: #fff;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+  // -------------------- footer
+  .footer {
+    background-color: var(--dark);
+    .copyright {
+      span {
+        cursor: pointer;
+        color: var(--red);
+      }
+    }
+    svg:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
